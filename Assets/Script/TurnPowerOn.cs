@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class TurnPowerOn : MonoBehaviour
 {
+    
+    public GameObject invOB;
     public GameObject[] lights;
 
     public GameObject text;
-
+    public GameObject DestroyObj
+        ;
     public bool powerIsOn;
 
     private bool inReach;
@@ -47,6 +50,8 @@ public class TurnPowerOn : MonoBehaviour
     {
         if (Input.GetButtonDown("Interact") && inReach)
         {
+            Destroy(DestroyObj);
+            invOB.SetActive(true);
             powerIsOn = true;
         }
 
